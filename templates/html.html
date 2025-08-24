@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+  <title> Link Checker</title>
+</head>
+<body>
+ <div class="all">
+  <form method="POST">
+    <input class="url-input" name="URL-type" type="url" placeholder="URL">
+    <input type="submit" class="url-btn"value="submit">
+  </form>
+  <div class="results">
+  <h2><span class="result">Results</span></h2>
+  <hr>
+  <p><span class="status">status</span> {{display_results}}</p>
+  </div>
+ </div>
+  </body>
+</html>
