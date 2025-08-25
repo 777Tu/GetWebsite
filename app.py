@@ -24,7 +24,7 @@ def home():
             get_url = requests.get(URL, timeout=5)
             url_status = get_url.status_code
             if url_status == 200:
-                status=f"🟢 [{type(url_status).__name__}]"
+                status=f"🟢 Active [{url_status}]"
                 clean_url = urlparse(URL)
                 domain = clean_url.netloc
                 url_ip = f"Link:__ {socket.gethostbyname(domain)}"
