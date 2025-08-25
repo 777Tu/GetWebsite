@@ -10,12 +10,12 @@ app = Flask(__name__)
 def home():
     status= ""
     URL = ""
-    if 'X-Forwarded-For' in request.headers:
-        user_ip = request.headers['X-Forwarded-For']
-        split(',')[0].strip()
-    else:
-        user_ip = request.remote_addr
-        my_ip=(f"My:__ {user_ip}")
+#    if 'X-Forwarded-For' in request.headers:
+#        user_ip = request.headers['X-Forwarded-For']
+#        split(',')[0].strip()
+#    else:
+    user_ip = request.remote_addr
+    my_ip=(f"My:__ {user_ip}")
     url_ip = ""
     if request.method =="POST":
         url= request.form.get("URL-type")
