@@ -9,19 +9,16 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def home():
     status= ""
-    URL = ""
-    
+    URL = ""   
     url_ip = ""
     if request.method =="POST":
         url= request.form.get("URL-type")
-        URL = url
-        
-        
+        URL = url 
         try:
             get_url = requests.get(URL, timeout=5)
             url_status = get_url.status_code
             if url_status == 200:
-                status=f"🟢 [{type(url_status).__name__}]"
+                status=f"🟢 Active [{url_status}]"
                 clean_url = urlparse(URL)
                 domain = clean_url.netloc
                 url_ip = socket.gethostbyname(domain)
